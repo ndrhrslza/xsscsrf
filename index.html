@@ -1,0 +1,91 @@
+
+<!-- filename = index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {
+            font-family: Poppins, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            font-family: Poppins, sans-serif;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .register-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #008CBA;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .register-btn:hover {
+            background-color: #005F6B;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+        <h1>Student Login Form</h1>
+    <div class="container">
+        <form action="login.php" method="post">
+            <label for="email">Email</label>
+            <input type="email" name="email" pattern="[a-z0-9._%+-]+@gmail+\.[a-z]{2,}$" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" required>
+            <button type="submit" >Login</button>
+        </form>
+        <div class="error-message"><?php if (isset($errorMessage)) echo $errorMessage; ?></div>
+        <button class="register-btn" onclick="location.href='register.html';">Register</button>
+    </div>
+
+    <script src="form.js"></script>
+
+
+</body>
+</html>

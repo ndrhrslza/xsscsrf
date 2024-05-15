@@ -1,0 +1,109 @@
+
+<!-- filename = index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    
+    body {
+            font-family: Poppins, sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            font-family: Poppins, sans-serif;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .back-btn {
+            font-family: Poppins, sans-serif;
+            width: 100%;
+            padding: 10px;
+            background-color: #008CBA;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .register-btn:hover {
+            background-color: #005F6B;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Student Register Form</h1>
+    <div class="container">
+        <form id="registerForm" action="register.php" method="post" onsubmit="return validatePasswords()">
+            <label for="email">Email</label>
+            <input type="email" name="email" pattern="[a-z0-9._%+-]+@gmail+\.[a-z]{2,}$" placeholder="Enter Email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+
+            <button type="submit">Register</button>
+        </form>
+        <div class="error-message" id="errorMessage"></div>
+        <button class="back-btn" onclick="location.href='index.html';">Back</button>
+    </div>
+
+    <script>
+        function validatePasswords() {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var errorMessage = document.getElementById('errorMessage');
+
+            if (password !== confirmPassword) {
+                errorMessage.textContent = 'Passwords do not match!';
+                return false;
+            }
+            errorMessage.textContent = '';
+            return true;
+        }
+    </script>
+</body>
+</html>
