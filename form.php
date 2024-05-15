@@ -1,5 +1,6 @@
 <?php
 include 'db.php';
+include 'csp.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = []; // Array to store error messages

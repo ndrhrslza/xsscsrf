@@ -2,6 +2,7 @@ create one short paragraph to describe this file (details.php):
 
 <?php
 session_start();
+include 'csp.php';
 
 
 if (isset($_SESSION['user_email']) && isset($_SESSION['user_password'])) {

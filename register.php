@@ -1,6 +1,7 @@
 <?php
 session_start();
-include 'db.php'; // Include database connection
+include 'db.php'; 
+include 'csp.php';
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

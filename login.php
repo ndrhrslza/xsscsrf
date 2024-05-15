@@ -1,6 +1,7 @@
 <?php
 session_start();
-include 'db.php'; // Include database connection
+include 'db.php'; 
+include 'csp.php';
 
 // Check if email and password are set in $_POST
 if (isset($_POST['email'], $_POST['password'])) {
